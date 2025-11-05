@@ -68,18 +68,21 @@
       </div>
     </section>
 
-    <section id="join" class="form">
-      <h3>Join the waitlist</h3>
-      <!-- Formspree endpoint ile değiştirilecektir -->
-      <form action="https://formspree.io/f/xvgvezbe" method="POST">
-        <input type="email" name="email" placeholder="your@email.com" required />
-        <input type="text" name="business" placeholder="Business / Store (optional)" />
-        <button class="btn" type="submit">Request Early Access</button>
-      </form>
-      <p class="note">No spam. We’ll only email you about AIPro.cx launch and updates.</p>
-    </section>
+   <section id="join" class="form">
+  <h3>Join the waitlist</h3>
+  <!-- Formspree endpoint -->
+  <form action="https://formspree.io/f/xvgvezbe" method="POST">
+    <input type="email" name="email" placeholder="your@email.com" required />
+    <input type="hidden" name="_replyto" value="{{email}}" />
+    <input type="hidden" name="_subject" value="Welcome to AIPro.cx — You're on the waitlist 🎉" />
+    <input type="hidden" name="message" value="Hey 👋 Thanks for joining AIPro.cx! We’ll notify you as soon as early access opens." />
+    <input type="text" name="business" placeholder="Business / Store (optional)" />
+    <button class="btn" type="submit">Request Early Access</button>
+  </form>
+  <p class="note">No spam. We'll only email you about AIPro.cx launch and updates.</p>
+</section>
 
-    <footer>
+ <footer>
       <div>© 2025 AIPro.cx — All rights reserved.</div>
       <div>Made with 💡 by AIPro</div>
     </footer>
