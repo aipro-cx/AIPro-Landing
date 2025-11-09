@@ -33,7 +33,32 @@
     @media (max-width:760px){ .title{font-size:30px} .grid{grid-template-columns:1fr} }
   </style>
 </head>
-<body>
+
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init({
+      publicKey: "2NMeCsUTJDHMX10AP"
+    });
+  })();
+
+  const form = document.getElementById('waitlistForm');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_w3p9jgc', 'template_nyclgqt', this)
+      .then(() => {
+        alert('🎉 Thank you for joining AIPro.cx! Check your inbox for confirmation.');
+      }, (error) => {
+        alert('❌ Oops... EmailJS error: ' + JSON.stringify(error));
+      });
+  });
+</script>
+
+  
+  <body>
   <div class="wrap">
     <header>
       <div class="logo"><span class="logo-badge"></span> AIPro.cx</div>
